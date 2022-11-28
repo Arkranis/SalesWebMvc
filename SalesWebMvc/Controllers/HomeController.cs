@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SalesWebMvc.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller //JSS pages address will be home/<methodName>/<?id> 
     {
         public IActionResult Index()
         {
@@ -17,9 +17,13 @@ namespace SalesWebMvc.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            ViewData["Message"] = "Sales MVC App";
+            ViewData["Teacher"] = "Nelio Alves";
+            //Dictionary of C# - saves several key,valor associations
+            // ViewData can be accessed in view like this:
+            //@{ViewData["Title"] = "About"; }
+            //@ViewData["Message"]
+            return View();//framework knows this method called a view and look in views/home/about for the page
         }
 
         public IActionResult Contact()
